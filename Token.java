@@ -9,8 +9,12 @@ package proj4;
  * @version 10/26/08
  *
  */
-public interface Token
-{
+public interface Token {
+
+	public final int PRECEDENCE_1 = 1;
+	public final int PRECEDENCE_2 = 2;
+	public final int PRECEDENCE_3 = 3;
+
 	/** Processes the current token.  Since every token will handle
 	 *  itself in its own way, handling may involve pushing or
 	 *  popping from the given stack and/or appending more tokens

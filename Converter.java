@@ -34,10 +34,39 @@ public class Converter {
 		// need and get rid of the rest.
 		while (myReader.hasNext()) {
 			String nextExpression = myReader.next();
-			System.out.println(nextExpression);
-			for (char c : nextExpression.toCharArray()) {
+			StringBuilder postfix = new StringBuilder();
+			//System.out.println(nextExpression);
+			for (char c : nextExpression.toCharArray()) { //should c be an object here
+				Token token = determineToken(c);
+				if(!((Object) c instanceof Token)){
+					postfix.append(c);
+				}
+				else{
+
+				}
 				System.out.println(c);
 			}
 		}       
+	}
+
+	private Token determineToken(char c){
+		switch (c) {
+			case '(':
+				return new LeftParen();
+			case ')':
+				return new RightParen();
+			case '+':
+				return new Plus();
+			case '-':
+				return new Minus();
+			case '*':
+				return new Multiply();
+			case '/':
+				return new Divide();
+			case '^':
+				return new Exponent();
+			default:
+				return new Semicolon();
+		}
 	}
 }

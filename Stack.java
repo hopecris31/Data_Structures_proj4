@@ -14,10 +14,15 @@ public class Stack<T> {
     private T data;
     private  Object[] holder;
     private int items;
-    private int DEFAULT_SIZE = 10;
+    private int DEFAULT_CAPACITY = 10;
     
     public Stack() {
-        this.holder = new Object[DEFAULT_SIZE];
+        this.holder = new Object[DEFAULT_CAPACITY];
+        this.items = 0;
+    }
+
+    public Stack(int capacity) {
+        this.holder = new Object[capacity];
         this.items = 0;
     }
    
@@ -37,11 +42,11 @@ public class Stack<T> {
         this.items++;
     }
 
-    private int getCapacity(){
+    public int getCapacity(){
         return this.holder.length;
     }
 
-    private void ensureCapacity(int minCapacity){
+    public void ensureCapacity(int minCapacity){
         if(this.getCapacity() < minCapacity){
             Object[] newHolder = new Object[minCapacity];
             System.arraycopy(this.holder, 0, newHolder, 0, this.getCapacity());
@@ -53,12 +58,16 @@ public class Stack<T> {
         if (this.isEmpty()){
             return null;
         }
+        T toReturn = (T) this.holder[this.topIndex()];
         this.items--;
-        return (T) this.holder[this.topIndex()];
+        return toReturn;
     } 
   
     public T peek() {
-    	return (T) this.holder[this.topIndex()];
+        if(!this.isEmpty()){
+            return (T) this.holder[this.topIndex()];
+        }
+        return null;
     } 
     
     public int size() {
