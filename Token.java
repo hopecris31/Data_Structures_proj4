@@ -24,6 +24,8 @@ public interface Token {
 	 *  @return String to be appended to the output
 	 */
     public String handle(Stack<Token> s);
+
+	public int precValue();
     
     /** Returns the token as a printable String
      * 

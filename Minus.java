@@ -20,6 +20,11 @@ public class Minus implements Token{
         return "i";
     }
 
+    @Override
+    public int precValue() {
+        return this.precedence;
+    }
+
     public String toString(){
         return "-";
     }
