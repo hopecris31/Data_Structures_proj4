@@ -14,9 +14,11 @@ public class LeftParen implements Token{
     }
 
     public String handle(Stack<Token> s) {
+        s.push(this);
         return null;
-    }
+    } //handle only returns when algorithm requires popping, that string is taken and appended in convert class
 
+    //string.append(current.handle())
     @Override
     public int precValue() {
         return this.precedence;

@@ -14,9 +14,14 @@ public class RightParen implements Token{
         this.precedence = RIGHT_PAREN;
     }
 
-    @Override
+
     public String handle(Stack<Token> s) {
-        return null;
+        String toReturn = "";
+        while(!(s.peek() instanceof LeftParen)){
+            toReturn += s.pop();
+        }
+        s.pop();
+        return toReturn;
     }
 
     @Override

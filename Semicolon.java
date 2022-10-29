@@ -16,7 +16,11 @@ public class Semicolon implements Token{
 
 
     public String handle(Stack<Token> s) {
-        return null;
+        String toReturn = "";
+        while(!s.isEmpty()){
+            toReturn += s.pop();
+        }
+        return toReturn;
     }
 
     public int precValue() {
