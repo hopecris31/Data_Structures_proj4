@@ -43,14 +43,14 @@ public class Converter {
 					postfix.append(c);
 				}
 				else if (isOperator(current)){
-					while(/*all conditions are false (make helper that evaluates these conditions*/){ //best way to check these conditions? maybe put the conditions in a bool helper method?
+					while(validPopConditions(stack, current)){
 						postfix.append(stack.pop());
+						//operator.handle(stack, current.precValue())
 					}
-					stack.push(current);  //need help understanding the order of events at step 3
-					//current.handle(stack); // ?
+					stack.push(current);
 				}
 				else if(current instanceof LeftParen){
-					stack.push(current);
+					stack.push(current); //this is intended behavior, but use the handle() method
 				}
 				else if(current instanceof RightParen){
 					postfix.append(current.handle(stack));
@@ -60,11 +60,21 @@ public class Converter {
 		}       
 	}
 
+	private boolean validPopConditions(Stack<Token> s, Token current){
+		if(s.isEmpty()){
+			return false;
+		}
+		else if(s.pop() instanceof LeftParen){
+			return false;
+		}
+		else return s.pop().precValue() >= current.precValue();
+	}
+
 	private static boolean isOperator(Token t){
 		return t.precValue() <= 3;
 	}
 
-	private Token determineToken(char c){
+	public Token determineToken(char c){
 		switch (c) {
 			case '(':
 				return new LeftParen();

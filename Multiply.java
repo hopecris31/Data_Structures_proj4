@@ -8,4 +8,23 @@ package proj4;
  */
 public class Multiply implements Token{
 
+    private int precedence;
+
+    public Multiply(){
+        this.precedence = MED_2;
+    }
+
+    @Override
+    public String handle(Stack<Token> s) {
+        return null;
+    }
+
+    @Override
+    public int precValue() {
+        return 0;
+    }
+
+    public String toString(){
+        return "*";
+    }
 }

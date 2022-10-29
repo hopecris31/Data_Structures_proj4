@@ -69,7 +69,7 @@ public class StackTest {
         assertEquals(8, stack.getCapacity());
     }
 
-    @Test //Tests pop, returns the item at the top of the stack
+    @Test //Tests pop, returns and removes the item at the top of the stack
     public void testStackPop(){
         stack.push("A");
         stack.push("B");
@@ -78,10 +78,25 @@ public class StackTest {
         assertEquals ("C", stack.pop());
     }
 
-    @Test //Tests pop, returns the item at the top of the stack
+    @Test //Tests pop, the stack is empty so does nothing
     public void testStackPopEmpty(){
 
         assertEquals (null, stack.pop());
+    }
+
+    @Test //Tests peek, returns the item at the top of the stack
+    public void testStackPeek(){
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+
+        assertEquals ("C", stack.peek());
+    }
+
+    @Test //Tests peek, returns nothing because the stack is empty
+    public void testStackPeekEmpty(){
+
+        assertNull(stack.peek());
     }
 
     @Test //Tests isEmpty; tested on non-empty stack

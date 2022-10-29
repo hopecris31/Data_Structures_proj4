@@ -8,17 +8,24 @@ package proj4;
  */
 public class Plus implements Token {
 
-    public String handle(Stack<Token> s) {
-        return "erase this";
+    private int precedence;
+
+    public Plus(){
+        this.precedence = LOW_1;
     }
 
-    @Override
+
+    public String handle(Stack<Token> s) {
+        return null;
+    }
+
+
     public int precValue() {
-        return 0;
+        return this.precedence;
     }
 
     public String toString() {
-    	return "erase this";
+    	return "+";
     }
     
 

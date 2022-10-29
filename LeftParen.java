@@ -8,11 +8,17 @@ package proj4;
  */
 public class LeftParen implements Token{
 
+    private int precedence;
     public LeftParen(){
-
+        this.precedence = LEFT_PAREN;
     }
 
     public String handle(Stack<Token> s) {
         return null;
+    }
+
+    @Override
+    public int precValue() {
+        return this.precedence;
     }
 }

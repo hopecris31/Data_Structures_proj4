@@ -8,9 +8,11 @@ package proj4;
  */
 public class Divide implements Token{
 
-    private final int PRESCEDENCE_VALUE = 2;
-    private int prescedenceValue;
+    private int precedence;
 
+    public Divide(){
+        this.precedence = MED_2;
+    }
 
     /** Processes the current token.  Since every token will handle
      *  itself in its own way, handling may involve pushing or
@@ -23,6 +25,11 @@ public class Divide implements Token{
 
     public String handle(Stack<Token> s) {
         return "i";
+    }
+
+    @Override
+    public int precValue() {
+        return this.precedence;
     }
 
     public String toString(){

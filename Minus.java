@@ -10,7 +10,7 @@ public class Minus implements Token{
     private int precedence;
 
     public Minus(){
-        this.precedence = PRECEDENCE_1;
+        this.precedence = LOW_1;
     }
 
     public String handle (Stack<Token> s){
