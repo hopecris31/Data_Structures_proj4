@@ -13,11 +13,7 @@ public interface Token {
 
 	public final int LOW_1 = 1;
 	public final int MED_2 = 2;
-
 	public final int HIGH_3 = 3;
-	public final int LEFT_PAREN = 4;
-	public final int RIGHT_PAREN = 5;
-	public final int SEMICO = 6;
 
 	/** Processes the current token.  Since every token will handle
 	 *  itself in its own way, handling may involve pushing or
@@ -28,6 +24,8 @@ public interface Token {
 	 *  @return String to be appended to the output
 	 */
     public String handle(Stack<Token> s);
+
+	public boolean isOperator();
 
 	public int precValue();
     

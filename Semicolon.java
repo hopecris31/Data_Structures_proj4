@@ -9,9 +9,10 @@ package proj4;
 public class Semicolon implements Token{
 
     private int precedence;
+    private boolean isOperator;
 
     public Semicolon(){
-        this.precedence = SEMICO;
+        this.isOperator = false;
     }
 
 
@@ -23,11 +24,17 @@ public class Semicolon implements Token{
         return toReturn;
     }
 
-    public int precValue() {
-        return this.precedence;
+    @Override
+    public boolean isOperator() {
+        return this.isOperator;
     }
 
     public String toString(){
         return ";";
+    }
+
+    @Override
+    public int precValue() {
+        return 0;
     }
 }

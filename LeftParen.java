@@ -8,19 +8,23 @@ package proj4;
  */
 public class LeftParen implements Token{
 
-    private int precedence;
+    private boolean isOperator;
     public LeftParen(){
-        this.precedence = LEFT_PAREN;
+        this.isOperator = false;
     }
 
     public String handle(Stack<Token> s) {
         s.push(this);
         return null;
-    } //handle only returns when algorithm requires popping, that string is taken and appended in convert class
+    }
 
-    //string.append(current.handle())
+    public boolean isOperator() {
+        return this.isOperator;
+    }
+
     @Override
     public int precValue() {
-        return this.precedence;
+        return 0;
     }
+
 }

@@ -9,8 +9,10 @@ package proj4;
 public class Exponent implements Token{
 
     private int precedence;
+    private boolean isOperator;
 
     public Exponent(){
+        this.isOperator = true;
         this.precedence = HIGH_3;
     }
 
@@ -20,22 +22,25 @@ public class Exponent implements Token{
             toReturn += s.pop();
         }
         s.push(this);
-        return null;
+        return toReturn;
     }
 
     private boolean validPopConditions(Stack<Token> s, Token current){
         if(s.isEmpty()){
             return false;
         }
-        else if(s.pop() instanceof LeftParen){
+        else if(s.peek() instanceof LeftParen){
             return false;
         }
-        else return s.pop().precValue() >= current.precValue();
+        else return s.peek().precValue() >= current.precValue();
     }
 
-    @Override
     public int precValue() {
         return this.precedence;
+    }
+
+    public boolean isOperator() {
+        return this.isOperator;
     }
 
     public String toString(){

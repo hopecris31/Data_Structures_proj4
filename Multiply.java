@@ -9,8 +9,10 @@ package proj4;
 public class Multiply implements Token{
 
     private int precedence;
+    private boolean isOperator;
 
     public Multiply(){
+        this.isOperator = true;
         this.precedence = MED_2;
     }
 
@@ -20,22 +22,26 @@ public class Multiply implements Token{
             toReturn += s.pop();
         }
         s.push(this);
-        return null;
+        return toReturn;
     }
 
     private boolean validPopConditions(Stack<Token> s, Token current){
         if(s.isEmpty()){
             return false;
         }
-        else if(s.pop() instanceof LeftParen){
+        else if(s.peek() instanceof LeftParen){
             return false;
         }
-        else return s.pop().precValue() >= current.precValue();
+        else return s.peek().precValue() >= current.precValue();
     }
 
-    @Override
+
     public int precValue() {
         return this.precedence;
+    }
+
+    public boolean isOperator() {
+        return this.isOperator;
     }
 
     public String toString(){

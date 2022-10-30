@@ -9,9 +9,10 @@ package proj4;
 public class RightParen implements Token{
 
     private int precedence;
+    private boolean isOperator;
 
     public RightParen(){
-        this.precedence = RIGHT_PAREN;
+        this.isOperator = false;
     }
 
 
@@ -24,12 +25,17 @@ public class RightParen implements Token{
         return toReturn;
     }
 
-    @Override
-    public int precValue() {
-        return this.precedence;
+
+    public boolean isOperator() {
+        return this.isOperator;
     }
 
     public String toString(){
         return "(";
+    }
+
+    @Override
+    public int precValue() {
+        return 0;
     }
 }
