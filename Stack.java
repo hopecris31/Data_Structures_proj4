@@ -75,14 +75,8 @@ public class Stack<T> {
     }
      
     public String toString() {
-        String string = "{";
-        if(this.isEmpty()){
-            return string += ">}";
-        }
+        String string = "{>";
         for(int i=this.size(); i-- > 0;){
-            if(i == this.size()-1){
-                string += ">";
-            }
             string += this.holder[i];
             if(i != 0){
                 string += ", ";
@@ -90,7 +84,6 @@ public class Stack<T> {
         }
         return string += "}";
     }
-
 } 
    
 

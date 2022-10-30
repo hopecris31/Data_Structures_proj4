@@ -48,6 +48,4 @@ public class Plus implements Token {
     public String toString() {
     	return "+";
     }
-    
-
 }

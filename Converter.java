@@ -28,12 +28,12 @@ public class Converter {
 	}
 
 	public void convert() {
-		Stack<Token> stack = new Stack<>();  // should this be defined locally
+		Stack<Token> stack = new Stack<>();
 		String postfix = "";
 		while (myReader.hasNext()) {
 			String nextExpression = myReader.next();
 			System.out.println(nextExpression);
-			for (char c : nextExpression.toCharArray()) { //should c be an object here
+			for (char c : nextExpression.toCharArray()) {
 				Token current = determineToken(c);
 				if(current == null){
 					postfix += c;
@@ -41,11 +41,9 @@ public class Converter {
 				else{
 					postfix += current.handle(stack);
 				}
-				//System.out.println(c);
-				System.out.println(postfix);
 			}
+			System.out.println(postfix);
 		}
-
 	}
 
 	public Token determineToken(char c){
@@ -66,7 +64,7 @@ public class Converter {
 				return new Exponent();
 			case ';':
 				return new Semicolon();
-			default:  // if not token
+			default:
 				return null;
 		}
 	}

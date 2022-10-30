@@ -15,7 +15,7 @@ public class LeftParen implements Token{
 
     public String handle(Stack<Token> s) {
         s.push(this);
-        return null;
+        return "";
     }
 
     public boolean isOperator() {
