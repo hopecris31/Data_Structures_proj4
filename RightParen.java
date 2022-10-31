@@ -31,7 +31,7 @@ public class RightParen implements Token{
     }
 
     public String toString(){
-        return "(";
+        return ")";
     }
 
     @Override

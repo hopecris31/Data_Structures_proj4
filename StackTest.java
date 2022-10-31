@@ -9,10 +9,11 @@ import org.junit.rules.Timeout;
 
 /**
  * 
- * Write a description of class StackTest here.
+ * Tests the Stack class.  Stack is an ADT that stores objects,
+ * and returns the most recently added object.
  * 
  * @author Hope Crisafi
- * @version (a version number or a date)
+ * @version 10/24/2022
  *
  */
 public class StackTest {

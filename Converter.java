@@ -1,5 +1,7 @@
 package proj4;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -29,21 +31,38 @@ public class Converter {
 
 	public void convert() {
 		Stack<Token> stack = new Stack<>();
-		String postfix = "";
+
 		while (myReader.hasNext()) {
 			String nextExpression = myReader.next();
-			System.out.println(nextExpression);
+			String postfix = "";
 			for (char c : nextExpression.toCharArray()) {
 				Token current = determineToken(c);
-				if(current == null){
+				if (current == null) {
 					postfix += c;
-				}
-				else{
+				} else {
 					postfix += current.handle(stack);
 				}
 			}
-			System.out.println(postfix);
+			System.out.println(nextExpression.substring(0, nextExpression.length() - 1) + " --> " + postfix);
 		}
+	}
+
+	public String convertReturn() {
+		Stack<Token> stack = new Stack<>();
+		String postfix = "";
+		while (myReader.hasNext()) {
+			String nextExpression = myReader.next();
+			for (char c : nextExpression.toCharArray()) {
+				Token current = determineToken(c);
+				if (current == null) {
+					postfix += c;
+				} else {
+					postfix += current.handle(stack).toString();
+				}
+			}
+			System.out.println(nextExpression.substring(0, nextExpression.length() - 1) + " --> " + postfix);
+		}
+		return postfix;
 	}
 
 	public Token determineToken(char c){
@@ -68,4 +87,12 @@ public class Converter {
 				return null;
 		}
 	}
+
+//	public String toString(){
+//		String toReturn = "";
+//		for (char c : postfix.toCharArray()) {
+//			toReturn += c;
+//		}
+//		return toReturn;
+//	}
 }

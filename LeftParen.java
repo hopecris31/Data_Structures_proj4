@@ -27,4 +27,8 @@ public class LeftParen implements Token{
         return 0;
     }
 
+    public String toString(){
+        return "(";
+    }
+
 }

@@ -41,7 +41,7 @@ public class Divide implements Token{
         else if(s.peek() instanceof LeftParen){
             return false;
         }
-        else return s.peek().precValue() > current.precValue();
+        else return s.peek().precValue() >= current.precValue();
     }
 
     public int precValue() {
