@@ -1,9 +1,9 @@
 package proj4;
 /**
- * Write a description of class Client here.
+ * Runs the converter method from its class to convert expressions into postfix notation.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hope Crisafi
+ * @version 10/29/2022
  */
 
 public class Client

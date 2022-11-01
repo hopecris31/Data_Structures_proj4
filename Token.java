@@ -5,15 +5,19 @@ package proj4;
  * object to be considered a token.  Every token must be able
  * to be processed (handle) and printable (toString).
  * 
- * @author Chris Fernandes
- * @version 10/26/08
+ * @author Hope Crisafi
+ * @version 10/26/2022
  *
  */
 public interface Token {
 
-	public final int LOW_1 = 1;
-	public final int MED_2 = 2;
-	public final int HIGH_3 = 3;
+	public final int NO_PREC = 0;
+	public final int LOW_PREC_1 = 1;
+	public final int MED_PREC_2 = 2;
+	public final int HIGH_PREC_3 = 3;
+	public final boolean IS_OPERATOR = true;
+	public final boolean IS_NOT_OPERATOR = false;
+
 
 	/** Processes the current token.  Since every token will handle
 	 *  itself in its own way, handling may involve pushing or

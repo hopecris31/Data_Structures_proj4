@@ -15,8 +15,8 @@ import org.junit.rules.Timeout;
  */
 public class ConvertTests {
 
-    //@Rule
-    //public Timeout timeout = Timeout.millis(100);
+    @Rule
+    public Timeout timeout = Timeout.millis(100);
 
     @Test // A+B-C; --> AB+C-
     public void Test1(){

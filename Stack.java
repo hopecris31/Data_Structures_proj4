@@ -30,10 +30,6 @@ public class Stack<T> {
     	return this.size() == 0;
     }
 
-    private int topIndex(){
-        return this.size()-1;
-    }
-
     public void push(T toPush) {
         if (this.size() == this.getCapacity()){
             this.ensureCapacity(this.size()*2); //should this be double or double +1
@@ -54,7 +50,7 @@ public class Stack<T> {
         }
     }
 
-    public T pop() { //use try/catch here??
+    public T pop() {
         if (this.isEmpty()){
             return null;
         }
@@ -83,6 +79,16 @@ public class Stack<T> {
             }
         }
         return string += "}";
+    }
+
+
+    /** ------------------------------
+     *      PRIVATE HELPER METHODS
+     * _______________________________
+     */
+
+    private int topIndex(){
+        return this.size()-1;
     }
 } 
    

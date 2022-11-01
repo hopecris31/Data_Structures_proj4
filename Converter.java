@@ -1,7 +1,5 @@
 package proj4;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -9,15 +7,15 @@ import java.util.Scanner;
 /**
  * Write a description of class Converter here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hope Crisafi
+ * @version 10/29/2022
  */
 public class Converter {
 	
 	private Scanner myReader;
 
 	/**
-	 * non-default constructor; Gradescope needs this to run tests
+	 * non-default constructor;
 	 * @param infile path to the input file 
 	 */
     public Converter(String infile)
@@ -29,9 +27,11 @@ public class Converter {
 		}
 	}
 
+	/**
+	 * converts infix expressions from a file into postfix notation
+	 */
 	public void convert() {
 		Stack<Token> stack = new Stack<>();
-
 		while (myReader.hasNext()) {
 			String nextExpression = myReader.next();
 			String postfix = "";
@@ -47,25 +47,18 @@ public class Converter {
 		}
 	}
 
-	public String convertReturn() {
-		Stack<Token> stack = new Stack<>();
-		String postfix = "";
-		while (myReader.hasNext()) {
-			String nextExpression = myReader.next();
-			for (char c : nextExpression.toCharArray()) {
-				Token current = determineToken(c);
-				if (current == null) {
-					postfix += c;
-				} else {
-					postfix += current.handle(stack).toString();
-				}
-			}
-			System.out.println(nextExpression.substring(0, nextExpression.length() - 1) + " --> " + postfix);
-		}
-		return postfix;
-	}
 
-	public Token determineToken(char c){
+	/** ------------------------------
+	 *      PRIVATE HELPER METHODS
+	 * _______________________________
+	 */
+
+	/**
+	 * Determines the Token type of a given character
+	 * @param c a char
+	 * @return the Token type of that character
+	 */
+	private Token determineToken(char c){
 		switch (c) {
 			case '(':
 				return new LeftParen();
@@ -88,11 +81,4 @@ public class Converter {
 		}
 	}
 
-//	public String toString(){
-//		String toReturn = "";
-//		for (char c : postfix.toCharArray()) {
-//			toReturn += c;
-//		}
-//		return toReturn;
-//	}
 }

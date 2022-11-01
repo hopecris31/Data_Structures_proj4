@@ -1,10 +1,10 @@
 package proj4;
 
 /**
- * Write a description of class Divide here.
+ * Process the Divide token. Has a precedence of 2.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hope Crisafi
+ * @version 10/28/2022
  */
 public class Divide implements Token{
 
@@ -12,14 +12,15 @@ public class Divide implements Token{
     private boolean isOperator;
 
     public Divide(){
-        this.isOperator = true;
-        this.precedence = MED_2;
+        this.isOperator = IS_OPERATOR;
+        this.precedence = MED_PREC_2;
     }
 
-    /** Processes the current token.  Since every token will handle
-     *  itself in its own way, handling may involve pushing or
-     *  popping from the given stack and/or appending more tokens
-     *  to the output string.
+    /** Processes the Divide token.  Pops and appends every operator on the stack until either occurs:
+     *      1. the Stack is empty
+     *      2. the top of the stack is a LeftParen
+     *      3. operator at top of Stack has lower precedence than Divide
+     *  The Divide is then pushed onto the stack.
      *
      *  @param s the Stack the token uses, if necessary, when processing itself.
      *  @return String to be appended to the output
@@ -34,6 +35,46 @@ public class Divide implements Token{
         return toReturn;
     }
 
+    /**
+     * gets the precedence value of the Divide token
+     * @return this.precedence
+     */
+    public int precValue() {
+        return this.precedence;
+    }
+
+    /**
+     * determines if the token is an operator
+     * Divide is an operator
+     * @return true
+     */
+    public boolean isOperator() {
+        return this.isOperator;
+    }
+
+    /**
+     * @return the String representation of Divide
+     */
+    public String toString(){
+        return "/";
+    }
+
+
+    /** ------------------------------
+     *      PRIVATE HELPER METHODS
+     * _______________________________
+     */
+
+
+    /**
+     * Returns true if:
+     *      1. the Stack is not empty
+     *      2. the top of the stack is not a LeftParen
+     *      3. operator at top of Stack has higher precedence than Divide
+     * @param s
+     * @param current
+     * @return true or false depending on conditions above
+     */
     private boolean validPopConditions(Stack<Token> s, Token current){
         if(s.isEmpty()){
             return false;
@@ -42,18 +83,6 @@ public class Divide implements Token{
             return false;
         }
         else return s.peek().precValue() >= current.precValue();
-    }
-
-    public int precValue() {
-        return this.precedence;
-    }
-
-    public boolean isOperator() {
-        return this.isOperator;
-    }
-
-    public String toString(){
-        return "/";
     }
 
 }
