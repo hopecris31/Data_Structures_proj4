@@ -18,42 +18,42 @@ public class ConvertTests {
     @Rule
     public Timeout timeout = Timeout.millis(100);
 
-    @Test // A+B-C; --> AB+C-
+    @Test // A+B-C --> AB+C-
     public void Test1(){
         System.out.println("Expected: A+B+C --> AB+C+");
         System.out.print("Actual:   ");Converter converter = new Converter("test1.txt");converter.convert();
         System.out.println("");
     }
 
-    @Test // A+B*C; --> ABC*+
+    @Test // A+B*C --> ABC*+
     public void Test2(){
         System.out.println("Expected: A+B*C --> ABC*+");
         System.out.print("Actual:   ");Converter converter = new Converter("test2.txt");converter.convert();
         System.out.println("");
     }
 
-    @Test // (A+B)*C; --> AB+C*
+    @Test // (A+B)*C --> AB+C*
     public void Test3(){
         System.out.println("Expected: (A+B)*C --> AB+C*");
         System.out.print("Actual:   ");Converter converter = new Converter("test3.txt");converter.convert();
         System.out.println("");
     }
 
-    @Test // (A+B)/(C-D); --> AB+CD-/
+    @Test // (A+B)/(C-D) --> AB+CD-/
     public void Test4(){
         System.out.println("Expected: (A+B)/(C-D) --> AB+CD-/");
         System.out.print("Actual:   ");Converter converter = new Converter("test4.txt");converter.convert();
         System.out.println("");
     }
 
-    @Test // ((A+B)*(C-D)+E)/(F+G); --> AB+CD-*E+FG+/
+    @Test // ((A+B)*(C-D)+E)/(F+G) --> AB+CD-*E+FG+/
     public void Test5(){
         System.out.println("Expected: ((A+B)*(C-D)+E)/(F+G) --> AB+CD-*E+FG+/");
         System.out.print("Actual:   ");Converter converter = new Converter("test5.txt");converter.convert();
         System.out.println("");
     }
 
-    @Test // A/B^C-D; --> ABC^/D-
+    @Test // A/B^C-D --> ABC^/D-
     public void Test6(){
         System.out.println("Expected: A/B^C-D --> ABC^/D-");
         System.out.print("Actual:   ");Converter converter = new Converter("test6.txt");converter.convert();
