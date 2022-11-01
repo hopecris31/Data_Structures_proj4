@@ -40,6 +40,16 @@ public class RightParen implements Token{
         return this.isOperator;
     }
 
+
+    /**
+     * RightParen is not an operator, so it has no precedence.
+     * @return 0
+     */
+    public int precValue() {
+        return NO_PREC;
+    }
+
+
     /**
      * @return the String representation of RightParen
      */
@@ -47,11 +57,4 @@ public class RightParen implements Token{
         return ")";
     }
 
-    /**
-     * LeftParen is not an operator, so it has no precedence.
-     * @return 0
-     */
-    public int precValue() {
-        return NO_PREC;
-    }
 }

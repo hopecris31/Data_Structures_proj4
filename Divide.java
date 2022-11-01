@@ -13,7 +13,7 @@ public class Divide implements Token{
 
     public Divide(){
         this.isOperator = IS_OPERATOR;
-        this.precedence = MED_PREC_2;
+        this.precedence = PREC_2;
     }
 
     /** Processes the Divide token.  Pops and appends every operator on the stack until either occurs:
@@ -25,7 +25,6 @@ public class Divide implements Token{
      *  @param s the Stack the token uses, if necessary, when processing itself.
      *  @return String to be appended to the output
      */
-
     public String handle(Stack<Token> s) {
         String toReturn = "";
         while(validPopConditions(s, this)){
@@ -35,13 +34,6 @@ public class Divide implements Token{
         return toReturn;
     }
 
-    /**
-     * gets the precedence value of the Divide token
-     * @return this.precedence
-     */
-    public int precValue() {
-        return this.precedence;
-    }
 
     /**
      * determines if the token is an operator
@@ -51,6 +43,16 @@ public class Divide implements Token{
     public boolean isOperator() {
         return this.isOperator;
     }
+
+
+    /**
+     * gets the precedence value of the Divide token
+     * @return this.precedence
+     */
+    public int precValue() {
+        return this.precedence;
+    }
+
 
     /**
      * @return the String representation of Divide
@@ -71,8 +73,8 @@ public class Divide implements Token{
      *      1. the Stack is not empty
      *      2. the top of the stack is not a LeftParen
      *      3. operator at top of Stack has higher precedence than Divide
-     * @param s
-     * @param current
+     * @param s a Stack ADT
+     * @param current the current Token
      * @return true or false depending on conditions above
      */
     private boolean validPopConditions(Stack<Token> s, Token current){

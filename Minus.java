@@ -12,7 +12,7 @@ public class Minus implements Token{
 
     public Minus(){
         this.isOperator = IS_OPERATOR;
-        this.precedence = LOW_PREC_1;
+        this.precedence = PREC_1;
     }
 
     /** Processes the Minus token.  Pops and appends every operator on the stack until either occurs:
@@ -33,6 +33,7 @@ public class Minus implements Token{
         return toReturn;
     }
 
+
     /**
      * determines if the token is an operator
      * Minus is an operator
@@ -51,12 +52,14 @@ public class Minus implements Token{
         return this.precedence;
     }
 
+
     /**
      * @return the String representation of Minus
      */
     public String toString(){
         return "-";
     }
+
 
     /** ------------------------------
      *      PRIVATE HELPER METHODS
@@ -69,8 +72,8 @@ public class Minus implements Token{
      *      1. the Stack is not empty
      *      2. the top of the stack is not a LeftParen
      *      3. operator at top of Stack has higher precedence than Minus
-     * @param s
-     * @param current
+     * @param s a Stack ADT
+     * @param current the current Token
      * @return true or false depending on conditions above
      */
     private boolean validPopConditions(Stack<Token> s, Token current){

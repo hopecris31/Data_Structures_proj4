@@ -13,7 +13,7 @@ public class Plus implements Token {
 
     public Plus(){
         this.isOperator = IS_OPERATOR;
-        this.precedence = LOW_PREC_1;
+        this.precedence = PREC_1;
     }
 
     /** Processes the Plus token.  Pops and appends every operator on the stack until either occurs:
@@ -34,13 +34,6 @@ public class Plus implements Token {
         return toReturn;
     }
 
-    /**
-     * gets the precedence value of the Plus token
-     * @return this.precedence
-     */
-    public int precValue() {
-        return this.precedence;
-    }
 
     /**
      * determines if the token is an operator
@@ -50,6 +43,16 @@ public class Plus implements Token {
     public boolean isOperator() {
         return this.isOperator;
     }
+
+
+    /**
+     * gets the precedence value of the Plus token
+     * @return this.precedence
+     */
+    public int precValue() {
+        return this.precedence;
+    }
+
 
     /**
      * @return the String representation of Plus
@@ -69,8 +72,8 @@ public class Plus implements Token {
      *      1. the Stack is not empty
      *      2. the top of the stack is not a LeftParen
      *      3. operator at top of Stack has higher precedence than Divide
-     * @param s
-     * @param current
+     * @param s a Stack ADT
+     * @param current the current Token
      * @return true or false depending on conditions above
      */
     private boolean validPopConditions(Stack<Token> s, Token current){

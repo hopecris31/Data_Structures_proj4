@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * Write a description of class Converter here.
+ * Takes a file that contains expressions in infix notation.  The converter
+ * function will read all of these expressions and convert them into postfix
+ * notation.  Prints expressions in both infix and postfix notation
  * 
  * @author Hope Crisafi
  * @version 10/29/2022
@@ -15,7 +17,7 @@ public class Converter {
 	private Scanner myReader;
 
 	/**
-	 * non-default constructor;
+	 * non-default constructor; takes a file input to convert expressions from
 	 * @param infile path to the input file 
 	 */
     public Converter(String infile)

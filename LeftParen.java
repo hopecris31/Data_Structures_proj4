@@ -14,6 +14,7 @@ public class LeftParen implements Token{
         this.isOperator = IS_NOT_OPERATOR;
     }
 
+
     /** Processes the LeftParen token.
      * Pushes the LeftParen onto the Stack.
      *
@@ -25,6 +26,7 @@ public class LeftParen implements Token{
         return "";
     }
 
+
     /**
      * determines if the token is an operator
      * LeftParen is not an operator
@@ -34,13 +36,15 @@ public class LeftParen implements Token{
         return this.isOperator;
     }
 
+
     /**
      * gLeftParen is not an operator, so it has no precedence.
      * @return 0
      */
-    public int precValue() { // ask about this
+    public int precValue() {
         return NO_PREC;
     }
+
 
     /**
      * @return the String representation of LeftParen

@@ -12,9 +12,9 @@ package proj4;
 public interface Token {
 
 	public final int NO_PREC = 0;
-	public final int LOW_PREC_1 = 1;
-	public final int MED_PREC_2 = 2;
-	public final int HIGH_PREC_3 = 3;
+	public final int PREC_1 = 1;
+	public final int PREC_2 = 2;
+	public final int PREC_3 = 3;
 	public final boolean IS_OPERATOR = true;
 	public final boolean IS_NOT_OPERATOR = false;
 
@@ -29,8 +29,16 @@ public interface Token {
 	 */
     public String handle(Stack<Token> s);
 
+	/**
+	 * Determines if a Token is an operator
+	 * @return true if it is an operator, false if not
+	 */
 	public boolean isOperator();
 
+	/**
+	 * determines the precedence value of a token
+	 * @return the precedence value
+	 */
 	public int precValue();
     
     /** Returns the token as a printable String

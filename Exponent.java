@@ -13,7 +13,7 @@ public class Exponent implements Token{
 
     public Exponent(){
         this.isOperator = IS_OPERATOR;
-        this.precedence = HIGH_PREC_3;
+        this.precedence = PREC_3;
     }
 
     /** Processes the Exponent token.  Pops and appends every operator on the stack until either occurs:
@@ -34,14 +34,6 @@ public class Exponent implements Token{
         return toReturn;
     }
 
-    /**
-     * gets the precedence value of the Exponent token
-     * @return this.precedence
-     */
-    public int precValue() {
-        return this.precedence;
-    }
-
 
     /**
      * determines if the token is an operator
@@ -51,6 +43,16 @@ public class Exponent implements Token{
     public boolean isOperator() {
         return this.isOperator;
     }
+
+
+    /**
+     * gets the precedence value of the Exponent token
+     * @return this.precedence
+     */
+    public int precValue() {
+        return this.precedence;
+    }
+
 
     /**
      * @return the String representation of Exponent
@@ -70,8 +72,8 @@ public class Exponent implements Token{
      *      1. the Stack is not empty
      *      2. the top of the stack is not a LeftParen
      *      3. operator at top of Stack has higher precedence than Exponent
-     * @param s
-     * @param current
+     * @param s a Stack ADT
+     * @param current the current Token
      * @return true or false depending on conditions above
      */
     private boolean validPopConditions(Stack<Token> s, Token current){

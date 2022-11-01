@@ -8,6 +8,10 @@ package proj4;
 
 public class Client
 {
+
+    /**
+     * tHe mAiN mEtHoD.
+     */
     public static void main(String[] args)
     {
         Converter converter = new Converter("proj4_input.txt");
