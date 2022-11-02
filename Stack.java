@@ -22,7 +22,6 @@ package proj4;
  */
 public class Stack<T> {
 
-    private T data;
     private  Object[] holder;
     private int items;
     private final int DEFAULT_CAPACITY = 10;
@@ -59,7 +58,7 @@ public class Stack<T> {
      */
     public void push(T toPush) {
         if (this.size() == this.getCapacity()){
-            this.ensureCapacity(this.size()*2);
+            this.ensureCapacity(this.size()*2+1);
         }
         this.holder[this.size()] = toPush;
         this.items++;

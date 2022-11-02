@@ -59,5 +59,34 @@ public class ConvertTests {
         System.out.print("Actual:   ");Converter converter = new Converter("test6.txt");converter.convert();
         System.out.println("");
     }
+
+    @Test // ((A+B-C)*(E/F)/(G+H))^I^J --> AB+C-EF/*GH+/I^J^
+    public void Test7(){
+        System.out.println("Expected: ((A+B-C)*(E/F)/(G+H))^I^J --> AB+C-EF/*GH+/I^J^");
+        System.out.print("Actual:   ");Converter converter = new Converter("test7.txt");converter.convert();
+        System.out.println("");
+    }
+
+    @Test // A+B-C*D/F^G^H/I*J-K+L --> AB+CD*FG^H^/I/J*-K-L+
+    public void Test8(){
+        System.out.println("Expected: A+B-C*D/F^G^H/I*J-K+L --> AB+CD*FG^H^/I/J*-K-L+");
+        System.out.print("Actual:   ");Converter converter = new Converter("test8.txt");converter.convert();
+        System.out.println("");
+    }
+
+    @Test // (((A^B)(C*D)/F)^(G*H)/I) --> AB^CD*F/GH*^I/
+    public void Test9(){
+        System.out.println("Expected: (((A^B)(C*D)/F)^(G*H)/I) --> AB^CD*F/GH*^I/");
+        System.out.print("Actual:   ");Converter converter = new Converter("test9.txt");converter.convert();
+        System.out.println("");
+    }
+
+    @Test // (A^^B)(C*D/E)+(F^G)/H --> A^B^CD*E/FG^H/+
+    public void Test10(){
+        System.out.println("Expected: (A^^B)(C*D/E)+(F^G)/H --> A^B^CD*E/FG^H/+");
+        System.out.print("Actual:   ");Converter converter = new Converter("test10.txt");converter.convert();
+        System.out.println("");
+    }
+
 }
 

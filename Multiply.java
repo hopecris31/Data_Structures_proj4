@@ -39,7 +39,7 @@ public class Multiply implements Token{
     /**
      * determines if the token is an operator
      * Multiply is an operator
-     * @return true
+     * @return true, Multiply is an operator
      */
     public boolean isOperator() {
         return this.isOperator;
@@ -48,15 +48,16 @@ public class Multiply implements Token{
 
     /**
      * gets the precedence value of the Multiply token
-     * @return this.precedence
+     * @return the precedence value
      */
     public int precValue() {
         return this.precedence;
     }
 
 
-    /**
-     * @return the String representation of Multiply
+    /** Returns the token Multiply as a printable String
+     *
+     *  @return the String version of the token.
      */
     public String toString(){
         return "*";

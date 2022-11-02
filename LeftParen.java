@@ -16,7 +16,7 @@ public class LeftParen implements Token{
 
 
     /** Processes the LeftParen token.
-     * Pushes the LeftParen onto the Stack.
+     *  Pushes the LeftParen onto the Stack.
      *
      *  @param s the Stack the token uses, if necessary, when processing itself.
      *  @return String to be appended to the output
@@ -30,7 +30,7 @@ public class LeftParen implements Token{
     /**
      * determines if the token is an operator
      * LeftParen is not an operator
-     * @return fasle
+     * @return fasle, LeftParen is not an operator
      */
     public boolean isOperator() {
         return this.isOperator;
@@ -39,15 +39,16 @@ public class LeftParen implements Token{
 
     /**
      * gLeftParen is not an operator, so it has no precedence.
-     * @return 0
+     * @return the precedence value
      */
     public int precValue() {
         return NO_PREC;
     }
 
 
-    /**
-     * @return the String representation of LeftParen
+    /** Returns the token LeftParen as a printable String
+     *
+     *  @return the String version of the token.
      */
     public String toString(){
         return "(";

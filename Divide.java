@@ -38,7 +38,7 @@ public class Divide implements Token{
     /**
      * determines if the token is an operator
      * Divide is an operator
-     * @return true
+     * @return true, Divide is an operator
      */
     public boolean isOperator() {
         return this.isOperator;
@@ -47,15 +47,16 @@ public class Divide implements Token{
 
     /**
      * gets the precedence value of the Divide token
-     * @return this.precedence
+     * @return the precedence value
      */
     public int precValue() {
         return this.precedence;
     }
 
 
-    /**
-     * @return the String representation of Divide
+    /** Returns the token Divide as a printable String
+     *
+     *  @return the String version of the token.
      */
     public String toString(){
         return "/";

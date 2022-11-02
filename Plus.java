@@ -38,7 +38,7 @@ public class Plus implements Token {
     /**
      * determines if the token is an operator
      * Plus is an operator
-     * @return true
+     * @return true, Plus is an operator
      */
     public boolean isOperator() {
         return this.isOperator;
@@ -47,15 +47,16 @@ public class Plus implements Token {
 
     /**
      * gets the precedence value of the Plus token
-     * @return this.precedence
+     * @return the precedence value
      */
     public int precValue() {
         return this.precedence;
     }
 
 
-    /**
-     * @return the String representation of Plus
+    /** Returns the token Plus as a printable String
+     *
+     *  @return the String version of the token.
      */
     public String toString() {
     	return "+";

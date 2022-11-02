@@ -34,7 +34,7 @@ public class RightParen implements Token{
     /**
      * determines if the token is an operator
      * RightParen is not an operator
-     * @return fasle
+     * @return fasle, RightPren is not an operator
      */
     public boolean isOperator() {
         return this.isOperator;
@@ -43,15 +43,16 @@ public class RightParen implements Token{
 
     /**
      * RightParen is not an operator, so it has no precedence.
-     * @return 0
+     * @return the precedence value
      */
     public int precValue() {
         return NO_PREC;
     }
 
 
-    /**
-     * @return the String representation of RightParen
+    /** Returns the token RightParen as a printable String
+     *
+     *  @return the String version of the token.
      */
     public String toString(){
         return ")";

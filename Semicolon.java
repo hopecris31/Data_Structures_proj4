@@ -31,7 +31,7 @@ private boolean isOperator;
     /**
      * determines if the token is an operator
      * Semicolon is not an operator
-     * @return false
+     * @return false, Semicolon is not an operator
      */
     public boolean isOperator() {
         return this.isOperator;
@@ -39,14 +39,15 @@ private boolean isOperator;
 
     /**
      * Semicolon is not an operator, so it has no precedence.
-     * @return 0
+     * @return the precedence value
      */
     public int precValue() {
         return NO_PREC;
     }
 
-    /**
-     * @return the String representation of Semicolon
+    /** Returns the token Semicolon as a printable String
+     *
+     *  @return the String version of the token.
      */
     public String toString(){
         return ";";

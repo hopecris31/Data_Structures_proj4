@@ -1,4 +1,5 @@
 package proj4;
+
 /**
  * Runs the converter method from its class to convert expressions into postfix notation.
  * 
@@ -10,7 +11,7 @@ public class Client
 {
 
     /**
-     * tHe mAiN mEtHoD.
+     * The mAiN method. 🤩🥸
      */
     public static void main(String[] args)
     {

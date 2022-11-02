@@ -20,8 +20,7 @@ public class Converter {
 	 * non-default constructor; takes a file input to convert expressions from
 	 * @param infile path to the input file 
 	 */
-    public Converter(String infile)
-    {
+    public Converter(String infile) {
 		try {
             myReader = new Scanner(new File(infile)); 
     	} catch (FileNotFoundException e) {
@@ -30,7 +29,8 @@ public class Converter {
 	}
 
 	/**
-	 * converts infix expressions from a file into postfix notation
+	 * converts infix expressions from a file into postfix notation.
+	 * Displays the equation in both the infix and postfix notation.
 	 */
 	public void convert() {
 		Stack<Token> stack = new Stack<>();

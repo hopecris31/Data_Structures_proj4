@@ -38,7 +38,7 @@ public class Exponent implements Token{
     /**
      * determines if the token is an operator
      * Exponent is an operator
-     * @return true
+     * @return true, Exponent is an operator
      */
     public boolean isOperator() {
         return this.isOperator;
@@ -47,15 +47,16 @@ public class Exponent implements Token{
 
     /**
      * gets the precedence value of the Exponent token
-     * @return this.precedence
+     * @return the precedence value
      */
     public int precValue() {
         return this.precedence;
     }
 
 
-    /**
-     * @return the String representation of Exponent
+    /** Returns the token Exponent as a printable String
+     *
+     *  @return the String version of the token.
      */
     public String toString(){
         return "^";
